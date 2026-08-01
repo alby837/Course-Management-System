@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Course</title>
+
+    <link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Add Course</h1>
+
+<form method="POST" onsubmit="return validateForm()">
+
+    {% csrf_token %}
+
+    <input type="text" id="course_name" name="course_name" placeholder="Course Name"><br><br>
+
+    <input type="text" id="course_code" name="course_code" placeholder="Course Code"><br><br>
+
+    <input type="text" id="duration" name="duration" placeholder="Duration"><br><br>
+
+    <input type="text" id="fee" name="fee" placeholder="Fee"><br><br>
+
+    <button type="submit">Save Course</button>
+
+</form>
+
+<br>
+
+<a href="{% url 'home' %}">Back to Home</a>
+
+</div>
+
+<script src="{% static 'courses/js/script.js' %}"></script>
+
+</body>
+</html>
